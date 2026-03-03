@@ -5,8 +5,8 @@ const Resume = () => {
       <div className="max-w-4xl mx-auto mb-6 flex items-center justify-between">
         <p className="text-neutral-400 text-sm">Viewing resume for <span className="text-white font-semibold">Noah Koeng</span></p>
         <button
-          disabled
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 text-white font-semibold text-sm opacity-60 cursor-not-allowed select-none"
+          onClick={()=>window.open("https://drive.google.com/file/d/1kHjHditcZgZc7Y_OcSFYY3Tw0tu3M2of/view?usp=sharing", "_blank")}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 text-white font-semibold text-sm cursor-pointer select-none hover:bg-orange-600 transition-colors"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

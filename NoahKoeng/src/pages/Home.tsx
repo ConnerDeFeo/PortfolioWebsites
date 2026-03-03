@@ -1,3 +1,6 @@
+import NoahHeadShot from "/Headshot.jpg";
+import EZSpike from "/EzSpike.jpeg";
+
 const experiences = [
   {
     role: "Manufacturing Process Engineering Intern",
@@ -13,6 +16,7 @@ const experiences = [
     location: "Rochester, NY",
     period: "May 2024 – Aug. 2024",
     tag: "Student Accelerator Program",
+    image: EZSpike,
     summary:
       "Built and commercialized a rechargeable motor-driven spike wrench through the RIT Student Accelerator, from prototype to investor pitch.",
   },
@@ -40,33 +44,51 @@ const Home = () => {
     <div className="min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden">
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="pt-48 pb-28 px-4 md:px-10 text-center">
-        <p className="text-orange-500 text-sm md:text-base font-semibold uppercase tracking-widest mb-5">
-          Mechanical Engineer
-        </p>
-        <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-white mb-7">
-          Noah Koeng
-        </h1>
-        <p className="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto mb-12">
-          B.S. &amp; M.E. Candidate at Rochester Institute of Technology · GPA 3.86 / 4.00
-        </p>
-        <div className="flex flex-wrap justify-center gap-5 text-base text-neutral-400">
-          <a href="tel:6077933640" className="hover:text-orange-400 transition-colors">
-            607-793-3640
-          </a>
-          <span className="text-neutral-700">|</span>
-          <a href="mailto:nfk8360@rit.edu" className="hover:text-orange-400 transition-colors">
-            nfk8360@rit.edu
-          </a>
-          <span className="text-neutral-700">|</span>
-          <a
-            href="https://linkedin.com/in/noah-koeng"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-400 transition-colors"
-          >
-            linkedin.com/in/noah-koeng
-          </a>
+      <section className="pt-36 pb-28 px-4 md:px-10">
+        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+          {/* Photo */}
+          <div className="shrink-0 flex justify-center">
+            <div className="relative w-48 h-84 md:w-64 md:h-112 lg:w-72 lg:h-126 rounded-full overflow-hidden ring-4 ring-orange-500/40 shadow-[0_0_48px_8px_rgba(249,115,22,0.2)]">
+              <img
+                src={NoahHeadShot}
+                alt="Noah Koeng"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="text-center md:text-left">
+            <p className="text-orange-500 text-sm md:text-base font-semibold uppercase tracking-widest mb-4">
+              Mechanical Engineer
+            </p>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-5">
+              Noah Koeng
+            </h1>
+            <p className="text-neutral-400 text-base md:text-xl max-w-2xl mb-8">
+              B.S. &amp; M.E. Candidate at Rochester Institute of Technology · GPA 3.86 / 4.00
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 text-base text-neutral-400">
+              <a href="tel:6077933640" className="hover:text-orange-400 transition-colors">
+                607-793-3640
+              </a>
+              <span className="text-neutral-700">|</span>
+              <a href="mailto:nfk8360@rit.edu" className="hover:text-orange-400 transition-colors">
+                nfk8360@rit.edu
+              </a>
+              <span className="text-neutral-700">|</span>
+              <a
+                href="https://linkedin.com/in/noah-koeng"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                linkedin.com/in/noah-koeng
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -116,6 +138,15 @@ const Home = () => {
                     <p className="text-neutral-300 text-base mt-3 leading-relaxed">
                       {exp.summary}
                     </p>
+                    {exp.image && (
+                      <div className={`mt-5 ${isLeft ? "md:flex md:justify-end" : ""}`}>
+                        <img
+                          src={exp.image}
+                          alt={`${exp.company} image`}
+                          className="rounded-2xl border border-neutral-800 shadow-lg shadow-black/40 w-full md:w-72 lg:w-80 object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               );
