@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral-950 text-neutral-100 font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .timeline-line {
+    background: linear-gradient(to bottom, #f97316, #c2410c);
+  }
+}
