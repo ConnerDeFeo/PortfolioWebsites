@@ -55,28 +55,28 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden">
       {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="pt-48 pb-20 px-10 text-center">
-        <p className="text-orange-500 text-base font-semibold uppercase tracking-widest mb-5">
+      <section className="pt-48 pb-20 px-4 md:px-10 text-center">
+        <p className="text-orange-500 text-sm md:text-base font-semibold uppercase tracking-widest mb-5">
           Engineering Portfolio
         </p>
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight text-white mb-7">
+        <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-white mb-7">
           Projects
         </h1>
-        <p className="text-neutral-400 text-xl max-w-2xl mx-auto">
+        <p className="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto">
           A selection of aerospace, mechanical, and software projects spanning UAV design,
           flight dynamics, and autonomous systems.
         </p>
       </section>
 
       {/* ── Divider ───────────────────────────────────────────────────── */}
-      <div className="max-w-screen-xl mx-auto px-10">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-10">
         <div className="h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
       </div>
 
       {/* ── Project Cards ─────────────────────────────────────────────── */}
-      <section className="max-w-screen-xl mx-auto px-10 py-24 space-y-10">
+      <section className="max-w-screen-xl mx-auto px-4 md:px-10 py-24 space-y-10">
         {/* Featured row — first two side by side on large screens */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {projects
@@ -89,7 +89,7 @@ const Projects = () => {
                 {/* Large faded index number */}
                 <span
                   aria-hidden
-                  className="absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
+                  className="hidden sm:block absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
                 >
                   {project.index}
                 </span>
@@ -99,7 +99,7 @@ const Projects = () => {
                   className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
                 />
 
-                <div className="relative p-8 flex flex-col h-full">
+                <div className="relative p-5 md:p-8 flex flex-col h-full">
                   {/* Top row */}
                   <div className="flex items-start justify-between gap-4 mb-5">
                     <div className="flex flex-wrap gap-2">
@@ -160,7 +160,7 @@ const Projects = () => {
               {/* Large faded index */}
               <span
                 aria-hidden
-                className="absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
+                className="hidden sm:block absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
               >
                 {project.index}
               </span>
@@ -169,7 +169,7 @@ const Projects = () => {
                 className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
               />
 
-              <div className="relative p-8 md:flex md:gap-12 md:items-start">
+              <div className="relative p-5 md:p-8 md:flex md:gap-12 md:items-start">
                 {/* Left side */}
                 <div className="md:w-2/5 mb-6 md:mb-0">
                   <div className="flex flex-wrap gap-2 mb-4">

@@ -45,13 +45,7 @@ const Navbar = () => {
                 <ul className="flex flex-col gap-5 pt-5 text-base font-medium text-neutral-400">
                 {navLinks.map((link) => (
                     <li key={link.label}>
-                    <a
-                        href={link.href}
-                        onClick={() => setMenuOpen(false)}
-                        className="hover:text-orange-400 transition-colors"
-                    >
-                        {link.label}
-                    </a>
+                    <Link to={link.href} onClick={() => setMenuOpen(false)}>{link.label}</Link>
                     </li>
                 ))}
                 </ul>

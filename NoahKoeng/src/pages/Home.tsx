@@ -37,17 +37,17 @@ const experiences = [
 const Home = () => {
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100">
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden">
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="pt-48 pb-28 px-10 text-center">
-        <p className="text-orange-500 text-base font-semibold uppercase tracking-widest mb-5">
+      <section className="pt-48 pb-28 px-4 md:px-10 text-center">
+        <p className="text-orange-500 text-sm md:text-base font-semibold uppercase tracking-widest mb-5">
           Mechanical Engineer
         </p>
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight text-white mb-7">
+        <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-white mb-7">
           Noah Koeng
         </h1>
-        <p className="text-neutral-400 text-xl max-w-2xl mx-auto mb-12">
+        <p className="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto mb-12">
           B.S. &amp; M.E. Candidate at Rochester Institute of Technology · GPA 3.86 / 4.00
         </p>
         <div className="flex flex-wrap justify-center gap-5 text-base text-neutral-400">
@@ -71,8 +71,8 @@ const Home = () => {
       </section>
 
       {/* ── Experience Timeline ───────────────────────────────────────── */}
-      <section id="about" className="max-w-screen-xl mx-auto px-10 pb-36">
-        <h2 className="text-4xl font-bold text-white text-center mb-20">
+      <section id="about" className="max-w-screen-xl mx-auto px-4 md:px-10 pb-36">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-20">
           Work <span className="text-orange-500">Experience</span>
         </h2>
 
@@ -91,18 +91,18 @@ const Home = () => {
                   } items-start md:items-center gap-6 md:gap-0`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-5 md:left-1/2 top-3 md:top-auto w-5 h-5 rounded-full bg-orange-500 border-2 border-neutral-950 -translate-x-[9px] z-10 shadow-[0_0_16px_4px_rgba(249,115,22,0.55)]" />
+                  <div className="absolute left-5 md:left-1/2 top-3 md:top-auto w-5 h-5 rounded-full bg-orange-500 border-2 border-neutral-950 -translate-x-[10px] z-10 shadow-[0_0_16px_4px_rgba(249,115,22,0.55)]" />
 
                   {/* Content */}
                   <div
-                    className={`ml-14 md:ml-0 w-full md:w-[calc(50%-3rem)] ${
+                    className={`ml-10 md:ml-0 w-full md:w-[calc(50%-3rem)] ${
                       isLeft ? "md:mr-auto md:pr-14 md:text-right" : "md:ml-auto md:pl-14 md:text-left"
                     }`}
                   >
-                    <h3 className="text-2xl font-bold text-white leading-snug">
+                    <h3 className="text-lg md:text-2xl font-bold text-white leading-snug">
                       {exp.role}
                     </h3>
-                    <p className="text-orange-400 text-lg font-semibold mt-1">
+                    <p className="text-base md:text-lg text-orange-400 font-semibold mt-1">
                       {exp.company}
                       {exp.tag && (
                         <span className="text-neutral-500 font-normal text-sm ml-2 italic">
