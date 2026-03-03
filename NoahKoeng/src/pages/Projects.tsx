@@ -1,5 +1,3 @@
-import EZSpike from "/EzSpike.jpeg";
-
 const projects = [
   {
     index: "01",
