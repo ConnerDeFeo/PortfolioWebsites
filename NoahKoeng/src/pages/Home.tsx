@@ -95,7 +95,7 @@ const Home = () => {
 
                   {/* Content */}
                   <div
-                    className={`ml-10 md:ml-0 w-full md:w-[calc(50%-3rem)] ${
+                    className={`ml-10 md:ml-0 w-[calc(100%-2.5rem)] md:w-[calc(50%-3rem)] ${
                       isLeft ? "md:mr-auto md:pr-14 md:text-right" : "md:ml-auto md:pl-14 md:text-left"
                     }`}
                   >
