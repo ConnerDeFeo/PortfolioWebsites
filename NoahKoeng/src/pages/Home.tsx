@@ -59,7 +59,7 @@ const experiences: Experience[] = [
 
 const Home = () => {
 
-  const imageStyling = `rounded-2xl border border-neutral-800 shadow-lg ${neutral.shadowBlackSoft} w-50 h-50 md:w-30 md:h-30 lg:w-60 lg:h-60 object-cover`
+  const imageStyling = `rounded-2xl border border-neutral-800 shadow-lg ${neutral.shadowBlackSoft} w-40 h-40 sm:w-50 sm:h-50 md:w-30 md:h-30 lg:w-60 lg:h-60 object-cover`
 
   return (
     <div className={`min-h-screen ${neutral.pageBg} ${neutral.pageText} overflow-x-hidden`}>

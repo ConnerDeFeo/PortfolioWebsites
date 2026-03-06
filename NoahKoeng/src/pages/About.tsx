@@ -54,24 +54,19 @@ const About = () => {
             <div className="space-y-12">
                 {highlights.map((item, index) => {
                     const imageFirst = index % 2 === 0;
-                    const image = (
-                        <div className="w-full md:w-2/5 flex-shrink-0 rounded-xl aspect-video overflow-hidden bg-neutral-800">
-                            <img
-                                src={item.image}
-                                alt={item.title}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    );
-                    const text = (
-                        <div className="flex-1 text-neutral-300 leading-relaxed">
-                            <h3 className={`text-xl font-semibold ${neutral.pageText} mb-3`}>{item.title}</h3>
-                            <p>{item.text}</p>
-                        </div>
-                    );
                     return (
                         <div key={index} className="flex flex-col md:flex-row gap-8 items-center">
-                            {imageFirst ? <>{image}{text}</> : <>{text}{image}</>}
+                            <div className={`w-full md:w-2/5 flex-shrink-0 rounded-xl aspect-video overflow-hidden bg-neutral-800 ${!imageFirst ? 'md:order-2' : ''}`}>
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className={`flex-1 text-neutral-300 leading-relaxed ${!imageFirst ? 'md:order-1' : ''}`}>
+                                <h3 className={`text-xl font-semibold ${neutral.pageText} mb-3`}>{item.title}</h3>
+                                <p>{item.text}</p>
+                            </div>
                         </div>
                     );
                 })}
