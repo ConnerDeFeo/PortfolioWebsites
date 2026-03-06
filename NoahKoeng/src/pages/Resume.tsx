@@ -1,12 +1,14 @@
+import { neutral, orange } from "../constants/colors";
+
 const Resume = () => {
   return (
-    <div className="min-h-screen bg-neutral-950 pt-28 pb-20 px-6">
+    <div className={`min-h-screen ${neutral.pageBg} pt-28 pb-20 px-6`}>
       {/* Download bar */}
       <div className="max-w-4xl mx-auto mb-6 flex items-center justify-between">
-        <p className="text-neutral-400 text-sm">Viewing resume for <span className="text-white font-semibold">Noah Koeng</span></p>
+        <p className="text-neutral-400 text-sm">Viewing resume for <span className={`${neutral.whiteText} font-semibold`}>Noah Koeng</span></p>
         <button
           onClick={()=>window.open("https://drive.google.com/file/d/1kHjHditcZgZc7Y_OcSFYY3Tw0tu3M2of/view?usp=sharing", "_blank")}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 text-white font-semibold text-sm cursor-pointer select-none hover:bg-orange-600 transition-colors"
+          className={`flex items-center gap-2 px-5 py-2.5 rounded-xl ${orange.bgPrimary} ${neutral.whiteText} font-semibold text-sm cursor-pointer select-none ${orange.hoverBgPrimary} transition-colors`}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -18,7 +20,7 @@ const Resume = () => {
       </div>
 
       {/* Resume paper */}
-      <div className="max-w-4xl mx-auto bg-white text-neutral-900 rounded-2xl shadow-2xl shadow-black/50 px-12 py-12">
+      <div className={`max-w-4xl mx-auto ${neutral.whiteBg} text-neutral-900 rounded-2xl shadow-2xl ${neutral.shadowBlackStrong} px-12 py-12`}>
 
         {/* Header */}
         <div className="text-center border-b border-neutral-300 pb-6 mb-6">
@@ -197,7 +199,7 @@ const ExperienceItem = ({
     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-0.5">
       <div>
         <p className="font-bold text-base text-neutral-900 leading-tight">{role}</p>
-        <p className="text-sm font-semibold text-orange-600">{company}</p>
+        <p className={`text-sm font-semibold ${orange.textStrong}`}>{company}</p>
       </div>
       <div className="text-sm text-neutral-500 sm:text-right shrink-0">
         <p>{period}</p>
@@ -207,7 +209,7 @@ const ExperienceItem = ({
     <ul className="mt-2 space-y-1">
       {bullets.map((b, i) => (
         <li key={i} className="flex gap-2 text-sm text-neutral-700 leading-relaxed">
-          <span className="text-orange-500 mt-[3px] shrink-0">•</span>
+          <span className={`${orange.textPrimary} mt-[3px] shrink-0`}>•</span>
           {b}
         </li>
       ))}

@@ -1,4 +1,28 @@
-const projects = [
+import { useState } from "react";
+import Dagger1 from '/Dagger1.png';
+import Dagger2 from '/Dagger2.png';
+import Dagger3 from '/Dagger3.png';
+import Drone1 from '/Drone1.jpeg';
+import DroneVideo from '/DroneVideo.mov';
+import Gears from '/Gears.jpg';
+import { neutral, orange } from "../constants/colors";
+
+type Project = {
+  index: string;
+  title: string;
+  context: string;
+  period: string;
+  status: string;
+  tags: string[];
+  summary: string;
+  bullets: string[];
+  featured: boolean;
+  coverImage: string;
+  images: string[];
+  videos: string[];
+};
+
+const projects: Project[] = [
   {
     index: "01",
     title: "Sea-Ready VTOL Aircraft",
@@ -13,8 +37,10 @@ const projects = [
       "Evaluated material properties and manufacturing methods to minimize weight while maximizing corrosion resistance.",
       "Developed motor configuration and hull architecture selected as the program's baseline platform configuration.",
     ],
-    accent: "from-orange-500/20 to-orange-900/5",
     featured: true,
+    coverImage: Dagger1,
+    images: [Dagger1, Dagger3, Dagger2],
+    videos: [],
   },
   {
     index: "02",
@@ -31,8 +57,10 @@ const projects = [
       "Deployed and validated onboard AI model for real-time vehicle classification during flight testing.",
       "Earned FAA Part 107 certification to legally conduct flight testing and operational validation.",
     ],
-    accent: "from-amber-500/20 to-amber-900/5",
     featured: true,
+    coverImage: Drone1,
+    images: [Drone1],
+    videos: [DroneVideo],
   },
   {
     index: "03",
@@ -48,20 +76,131 @@ const projects = [
       "Linearized system to generate state-space models for stability and control analysis.",
       "Evaluated aircraft response to control inputs and compared linear vs. nonlinear dynamic behavior.",
     ],
-    accent: "from-orange-400/15 to-neutral-900/5",
     featured: false,
+    coverImage: Gears,
+    images: [],
+    videos: [],
   },
 ];
 
 const Projects = () => {
+  const [selected, setSelected] = useState<Project | null>(null);
+
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-100 overflow-x-hidden">
+    <div className={`min-h-screen ${neutral.pageBg} ${neutral.pageText} overflow-x-hidden`}>
+      {/* ── Modal ─────────────────────────────────────────────────────── */}
+      {selected && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center p-4 ${neutral.overlayDark} backdrop-blur-sm`}
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="relative bg-neutral-900 border border-neutral-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Body */}
+            <div className="p-6 md:p-8">
+              {/* Header row */}
+              <div className="flex items-start justify-between gap-4 mb-1">
+                <div className="flex items-center gap-2">
+                  <span className={`text-xs font-black tracking-widest ${orange.textSecondary} ${orange.bgSoft} border ${orange.borderSoft} px-2 py-1 rounded-lg`}>
+                    {selected.index}
+                  </span>
+                  <span
+                    className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
+                      selected.status === "Active"
+                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                        : "bg-neutral-800 text-neutral-500 border border-neutral-700"
+                    }`}
+                  >
+                    {selected.status}
+                  </span>
+                </div>
+                {/* Close button */}
+                <button
+                  onClick={() => setSelected(null)}
+                  className={`w-8 h-8 flex items-center justify-center rounded-full bg-neutral-800 text-neutral-400 ${neutral.hoverWhiteText} hover:bg-neutral-700 transition-colors shrink-0`}
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <h2 className={`text-2xl md:text-3xl font-bold ${neutral.whiteText} leading-tight mb-1 mt-4`}>
+                {selected.title}
+              </h2>
+              <p className={`${orange.textSecondary} font-semibold text-sm mb-1`}>{selected.context}</p>
+              <p className="text-neutral-500 text-xs mb-5">{selected.period}</p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {selected.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full ${orange.bgSoft} ${orange.textSecondary} border ${orange.borderSoft}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="h-px bg-neutral-800 mb-6" />
+
+              {/* Summary */}
+              <p className="text-neutral-300 text-base leading-relaxed mb-6">
+                {selected.summary}
+              </p>
+
+              {/* Bullets */}
+              <ul className="space-y-3">
+                {selected.bullets.map((b, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-neutral-400 leading-relaxed">
+                    <span className={`${orange.textPrimary} mt-[3px] shrink-0`}>▸</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Videos */}
+              {selected.videos.length > 0 && (
+                <div className="flex flex-col gap-3 mt-6">
+                  {selected.videos.map((src, i) => (
+                    <div key={i} className="rounded-2xl overflow-hidden bg-neutral-800">
+                      <video
+                        src={src}
+                        controls
+                        className="w-full max-h-[75vh]"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Images */}
+              {selected.images.length > 0 && (
+                <div className="flex flex-col gap-3 mt-6">
+                  {selected.images.map((src, i) => (
+                    <div key={i} className="rounded-2xl overflow-hidden bg-neutral-800">
+                      <img
+                        src={src}
+                        alt={`${selected.title} image ${i + 1}`}
+                        className="w-full max-h-[75vh] object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="pt-48 pb-20 px-4 md:px-10 text-center">
-        <p className="text-orange-500 text-sm md:text-base font-semibold uppercase tracking-widest mb-5">
+        <p className={`${orange.textPrimary} text-sm md:text-base font-semibold uppercase tracking-widest mb-5`}>
           Engineering Portfolio
         </p>
-        <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-white mb-7">
+        <h1 className={`text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight ${neutral.whiteText} mb-7`}>
           Projects
         </h1>
         <p className="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto">
@@ -72,143 +211,64 @@ const Projects = () => {
 
       {/* ── Divider ───────────────────────────────────────────────────── */}
       <div className="max-w-screen-xl mx-auto px-4 md:px-10">
-        <div className="h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
+        <div className={`h-px bg-gradient-to-r from-transparent ${orange.gradientViaSoft} to-transparent`} />
       </div>
 
       {/* ── Project Cards ─────────────────────────────────────────────── */}
-      <section className="max-w-screen-xl mx-auto px-4 md:px-10 py-24 space-y-10">
-        {/* Featured row — first two side by side on large screens */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {projects
-            .filter((p) => p.featured)
-            .map((project) => (
-              <div
-                key={project.index}
-                className="group relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 hover:border-orange-500/50 transition-all duration-500"
-              >
-                {/* Large faded index number */}
-                <span
-                  aria-hidden
-                  className="hidden sm:block absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
-                >
-                  {project.index}
-                </span>
-
-                {/* Gradient overlay accent */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
-                />
-
-                <div className="relative p-5 md:p-8 flex flex-col h-full">
-                  {/* Top row */}
-                  <div className="flex items-start justify-between gap-4 mb-5">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <span
-                      className={`shrink-0 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
-                        project.status === "Active"
-                          ? "bg-green-500/10 text-green-400 border border-green-500/20"
-                          : "bg-neutral-800 text-neutral-500 border border-neutral-700"
-                      }`}
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-1">
-                    {project.title}
-                  </h2>
-                  <p className="text-orange-400 font-semibold text-base mb-1">{project.context}</p>
-                  <p className="text-neutral-500 text-sm mb-5">{project.period}</p>
-
-                  {/* Summary */}
-                  <p className="text-neutral-300 text-base leading-relaxed mb-6">
-                    {project.summary}
-                  </p>
-
-                  {/* Bullets */}
-                  <ul className="mt-auto space-y-2">
-                    {project.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-neutral-400 leading-relaxed">
-                        <span className="text-orange-500 mt-[3px] shrink-0">▸</span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-        </div>
-
-        {/* Non-featured row */}
-        {projects
-          .filter((p) => !p.featured)
-          .map((project) => (
+      <section className="max-w-screen-xl mx-auto px-4 md:px-10 py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
             <div
               key={project.index}
-              className="group relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 hover:border-orange-500/50 transition-all duration-500"
+              onClick={() => setSelected(project)}
+              className={`group relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 ${orange.hoverBorder} transition-all duration-500 flex flex-col cursor-pointer`}
             >
-              {/* Large faded index */}
-              <span
-                aria-hidden
-                className="hidden sm:block absolute -top-6 -right-4 text-[9rem] font-black text-white/[0.04] select-none leading-none pointer-events-none group-hover:text-orange-500/10 transition-colors duration-500"
-              >
-                {project.index}
-              </span>
+              {/* Cover image */}
+              <div className="relative h-48 overflow-hidden bg-neutral-800">
+                <img
+                  src={project.coverImage}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                />
+                {/* Index badge */}
+                <span className={`absolute top-3 left-3 text-xs font-black tracking-widest ${orange.textSecondary} bg-neutral-900/80 px-2 py-1 rounded-lg`}>
+                  {project.index}
+                </span>
+                {/* Status badge */}
+                <span
+                  className={`absolute top-3 right-3 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
+                    project.status === "Active"
+                      ? "bg-green-800/80 text-green-400 border border-green-500/30"
+                      : "bg-neutral-800/90 text-neutral-500 border border-neutral-700"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
 
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
-              />
+              {/* Card body */}
+              <div className="p-6 flex flex-col flex-1">
+                <h2 className={`text-xl font-bold ${neutral.whiteText} leading-tight mb-1`}>
+                  {project.title}
+                </h2>
+                <p className={`${orange.textSecondary} font-semibold text-sm mb-1`}>{project.context}</p>
+                <p className="text-neutral-500 text-xs mb-4">{project.period}</p>
 
-              <div className="relative p-5 md:p-8 md:flex md:gap-12 md:items-start">
-                {/* Left side */}
-                <div className="md:w-2/5 mb-6 md:mb-0">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-1">
-                    {project.title}
-                  </h2>
-                  <p className="text-orange-400 font-semibold text-base mb-1">{project.context}</p>
-                  <p className="text-neutral-500 text-sm mb-4">{project.period}</p>
-                  <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-neutral-800 text-neutral-500 border border-neutral-700">
-                    {project.status}
-                  </span>
-                </div>
-
-                {/* Right side */}
-                <div className="md:w-3/5">
-                  <p className="text-neutral-300 text-base leading-relaxed mb-6">
-                    {project.summary}
-                  </p>
-                  <ul className="space-y-2">
-                    {project.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-3 text-sm text-neutral-400 leading-relaxed">
-                        <span className="text-orange-500 mt-[3px] shrink-0">▸</span>
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full ${orange.bgSoft} ${orange.textSecondary} border ${orange.borderSoft}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
+        </div>
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { neutral, orange } from "../constants/colors";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -7,21 +8,22 @@ const Navbar = () => {
     const navLinks = [
         { label: "Home", href: "/" },
         { label: "Projects", href: "/projects" },
+        { label: "About", href: "/about" },
         { label: "Resume", href: "/resume" }
     ];
 
     return(
         /* ── Navbar ───────────────────────────────────────────────────── */
-        <header className="fixed top-0 inset-x-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
+        <header className={`fixed top-0 inset-x-0 z-50 ${neutral.headerBg} backdrop-blur border-b border-neutral-800`}>
             <nav className="max-w-screen-xl mx-auto px-10 h-20 flex items-center justify-between">
-            <span className="text-2xl font-bold tracking-tight text-white">
-                Noah <span className="text-orange-500">Koeng</span>
+            <span className={`text-2xl font-bold tracking-tight ${neutral.whiteText}`}>
+                Noah <span className={orange.textPrimary}>Koeng</span>
             </span>
 
             {/* Desktop links */}
             <ul className="hidden md:flex items-center gap-10 text-base font-medium text-neutral-400">
                 {navLinks.map((link) => (
-                <li key={link.label} className="hover:text-orange-400 transition-colors duration-200">
+                <li key={link.label} className={`${orange.hoverText} transition-colors duration-200`}>
                     <Link to={link.href}>{link.label}</Link>
                 </li>
                 ))}
@@ -41,7 +43,7 @@ const Navbar = () => {
 
             {/* Mobile menu */}
             {menuOpen && (
-            <div className="md:hidden border-t border-neutral-800 bg-neutral-950 px-10 pb-5">
+            <div className={`md:hidden border-t border-neutral-800 ${neutral.pageBg} px-10 pb-5`}>
                 <ul className="flex flex-col gap-5 pt-5 text-base font-medium text-neutral-400">
                 {navLinks.map((link) => (
                     <li key={link.label}>
