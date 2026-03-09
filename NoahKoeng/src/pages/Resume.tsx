@@ -39,8 +39,8 @@ const Resume = () => {
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
             <div>
               <p className="font-bold text-base text-neutral-900">Rochester Institute of Technology</p>
-              <p className="text-sm text-neutral-700">B.S. and M.E. in Mechanical Engineering</p>
-              <p className="text-sm text-neutral-500">B.S. GPA: 3.86 / 4 &nbsp;&nbsp;·&nbsp;&nbsp; M.E. GPA: 4.00 / 4</p>
+              <p className="text-sm text-neutral-700">B.S. in Mechanical Engineering, GPA: 3.86/4</p>
+              <p className="text-sm text-neutral-700">M.E. in Mechanical Engineering, GPA: 4.00/4</p>
             </div>
             <div className="text-sm text-neutral-500 sm:text-right shrink-0">
               <p>Aug. 2021 – May 2026</p>
@@ -122,17 +122,6 @@ const Resume = () => {
               "Integrated and tuned flight controller hardware to achieve stable, repeatable flight performance.",
               "Deployed and validated onboard AI model for real-time vehicle classification during flight testing.",
               "Earned FAA Part 107 certification to legally conduct flight testing and operational validation.",
-            ]}
-          />
-          <ExperienceItem
-            role="6-DOF Aircraft Modeling & Stability Analysis"
-            company="Flight Dynamics"
-            location=""
-            period="Apr. 2025"
-            bullets={[
-              "Developed nonlinear 6-DOF aircraft model in MATLAB/Simulink to simulate full aircraft motion.",
-              "Linearized system to generate state-space models for stability and control analysis.",
-              "Evaluated aircraft response to control inputs and compared linear vs nonlinear dynamic behavior.",
             ]}
           />
         </Section>

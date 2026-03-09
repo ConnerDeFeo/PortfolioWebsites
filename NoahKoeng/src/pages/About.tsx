@@ -1,23 +1,30 @@
-import Gears from '/Gears.jpg'
 import Track2 from '/Track2.jpg';
-
+import About21 from '/About21.jpeg';
+import Boat1 from '/Boat1.jpg';
+import Teardrop1 from '/Teardrop1.jpg';
+import Bike1 from '/Bike1.jpg';
 import { neutral } from "../constants/colors";
 
 const highlights = [
     {
+        title: "Learning the Tools",
+        text: "My introduction to building started at home, helping my dad construct a 28-foot cabin cruiser. At the time I was mostly assisting where I could, but the experience gave me my first exposure to working with tools and materials. Learning happened by doing—measuring, cutting, sanding, and watching how larger projects come together piece by piece.",
+        image: Boat1,
+    },
+    {
         title: "Early Projects",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        image: Gears,
+        text: "As I got older, I began taking on smaller projects of my own. Simple builds like a wine rack or a couch table became opportunities to experiment with new tools and techniques. Through these projects I learned skills such as welding, finishing work, and the patience required to refine small details that make a finished product feel complete.",
+        image: About21,
     },
     {
-        title: "Learning the Craft",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        image: Gears,
+        title: "Larger Builds",
+        text: "Eventually those small projects grew into larger ones. One of the most memorable was building a teardrop camper, a project I largely led while still learning from my dad along the way. Working on something at that scale meant thinking through structure, materials, and systems, and it was where I first began incorporating things like electrical wiring and more complex assembly.",
+        image: Teardrop1,
     },
     {
-        title: "Indepnedent Builds",
-        text: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.",
-        image: Gears,
+        title: "Today's Projects",
+        text: "All of these experiences shaped the way I approach working on machines and systems today. The same curiosity and willingness to learn carries over into other hands-on work, like maintaining and modifying my motorcycle. Whether it’s wood, metal, or mechanical systems, I’ve always enjoyed understanding how things are built and taking the time to improve or repair them myself.",
+        image: Bike1,
     },
 ];
 
@@ -49,7 +56,7 @@ const About = () => {
             </div>
 
             {/* ── Section 2: Highlights ────────────────────────────────── */}
-            <h2 className={`text-4xl font-bold mt-20 mb-12 text-center ${neutral.pageText} border-b border-neutral-800 pb-4`}>Engineering Mindset</h2>
+            <h2 className={`text-4xl font-bold mt-20 mb-12 text-center ${neutral.pageText} border-b border-neutral-800 pb-4`}>A Builder's Mindset</h2>
             <div className="space-y-12">
                 {highlights.map((item, index) => {
                     const imageFirst = index % 2 === 0;
