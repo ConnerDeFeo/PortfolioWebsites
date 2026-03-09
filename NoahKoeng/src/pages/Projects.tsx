@@ -4,7 +4,14 @@ import Dagger2 from '/Dagger2.png';
 import Dagger3 from '/Dagger3.png';
 import Drone1 from '/Drone1.jpeg';
 import DroneVideo from '/DroneVideo.mov';
-import Gears from '/Gears.jpg';
+import Drone2 from '/Drone2.png';
+import EZSpike1 from '/EZSpike1.jpeg';
+import EZSpike2 from '/EZSpike2.jpg';
+import EZSpike3 from '/EZSpike3.jpeg';
+import EZSpike4 from '/EZSpike4.jpg';
+import Orbital1 from '/Orbital1.png';
+import Orbital2 from '/Orbital2.png';
+import Flight1 from '/Flight1.png';
 import { neutral, orange } from "../constants/colors";
 
 type Project = {
@@ -59,11 +66,31 @@ const projects: Project[] = [
     ],
     featured: true,
     coverImage: Drone1,
-    images: [Drone1],
+    images: [Drone1,Drone2],
     videos: [DroneVideo],
   },
-  {
+    {
     index: "03",
+    title: "EZSpike Wrench",
+    context: "RIT Accelerator Program",
+    period: "May 2024 – Aug. 2024",
+    status: "Completed",
+    tags: ["Product Design", "Electromechanical Systems", "Prototyping", "Entrepreneurship"],
+    summary:
+      "Developed an ergonomic, motor-driven wrench designed to automate spike replacement in track shoes, improving efficiency for athletes through iterative prototyping and integrated mechanical and electronic design.",
+    bullets: [
+      "Designed and prototyped multiple iterations of the EZSpike wrench, refining ergonomics and usability through athlete testing and feedback.",
+      "Integrated motors, batteries, and electronic controls with mechanical components to create a rechargeable automated spike removal tool.",
+      "Led CAD development and physical prototyping to transition the concept from initial design to a functional working product.",
+      "Conducted market validation, intellectual property research, and investor presentations through participation in a university startup accelerator.",
+    ],
+    featured: true,
+    coverImage: EZSpike1,
+    images: [EZSpike1,EZSpike3,EZSpike2,EZSpike4],
+    videos: [],
+  },
+  {
+    index: "04",
     title: "6-DOF Aircraft Modeling & Stability Analysis",
     context: "Flight Dynamics Course",
     period: "Apr. 2025",
@@ -77,9 +104,49 @@ const projects: Project[] = [
       "Evaluated aircraft response to control inputs and compared linear vs. nonlinear dynamic behavior.",
     ],
     featured: false,
-    coverImage: Gears,
+    coverImage: Flight1,
     images: [],
     videos: [],
+  },
+  {
+  index: "05",
+  title: "Mission to Mars Trajectory Analysis",
+  context: "Orbital Mechanics Course",
+  period: "Nov. 2025",
+  status: "Completed",
+  tags: ["MATLAB", "Orbital Mechanics", "Simulation"],
+  summary:
+    "Developed a MATLAB program to model a non-Hohmann interplanetary transfer trajectory from Earth to Mars, computing orbital parameters, delta-V requirements, and mission propellant needs.",
+  bullets: [
+    "Modeled an interplanetary Earth-to-Mars transfer trajectory using orbital mechanics principles and heliocentric dynamics.",
+    "Computed hyperbolic departure and capture conditions including eccentricity, turning angles, and aiming radii.",
+    "Calculated required mission delta-V, propellant mass fraction, and transfer time-of-flight using MATLAB.",
+    "Validated trajectory calculations against parameters similar to NASA’s MAVEN mission profile."
+  ],
+  featured: false,
+  coverImage: Orbital1,
+  images: [],
+  videos: [],
+  },
+  {
+  index: "06",
+  title: "General Coplanar Hohmann Transfer Calculator",
+  context: "Orbital Mechanics Course",
+  period: "Dec. 2025",
+  status: "Completed",
+  tags: ["MATLAB", "Orbital Mechanics", "Simulation"],
+  summary:
+    "Built a MATLAB function and simulation tool to compute delta-V requirements and time-of-flight for generalized coplanar Hohmann transfers between elliptical orbits.",
+  bullets: [
+    "Developed a reusable MATLAB function to analyze Hohmann transfers between elliptical orbits with configurable orbital parameters.",
+    "Computed departure delta-V, arrival delta-V, total mission delta-V, and transfer time-of-flight.",
+    "Implemented two transfer configurations including periapsis-departure/apoapsis-arrival and apoapsis-departure/periapsis-arrival trajectories.",
+    "Validated the program using multiple orbital scenarios with both SI and British unit systems."
+  ],
+  featured: false,
+  coverImage: Orbital2,
+  images: [],
+  videos: [],
   },
 ];
 

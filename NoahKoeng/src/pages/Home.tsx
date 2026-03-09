@@ -1,7 +1,7 @@
 import NoahHeadShot from "/Headshot.jpg";
-import EZSpike from "/EzSpike.jpeg";
 import HyperTherm1 from '/Hypertherm1.jpeg';
 import HyperTherm2 from '/Hypertherm2.jpeg';
+import EZSpike1 from "/EZSpike1.jpeg";
 import EZSpike2 from '/EZSpike2.jpg';
 import Corning1 from '/Corning1.jpg';
 import Corning2 from '/Corning2.jpg';
@@ -20,6 +20,14 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    role: "Classical Controls Teacher's Assistant",
+    company: "Rochester Institute of Technology",
+    location: "Rochester, NY",
+    period: "Jan. 2026 – Present",
+    summary:
+      "Guide students in classical control theory during office hours and assist the professor with laboratory setup, execution, and evaluation.",
+  },
+  {
     role: "Manufacturing Process Engineering Intern",
     company: "Hypertherm Associates",
     location: "Lebanon, NH",
@@ -34,7 +42,7 @@ const experiences: Experience[] = [
     location: "Rochester, NY",
     period: "May 2024 – Aug. 2024",
     tag: "Student Accelerator Program",
-    images: [EZSpike, EZSpike2],
+    images: [EZSpike1, EZSpike2],
     summary:
       "Built and commercialized a rechargeable motor-driven spike wrench through the RIT Student Accelerator, from prototype to investor pitch.",
   },
