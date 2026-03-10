@@ -272,8 +272,7 @@ const Projects = () => {
           Projects
         </h1>
         <p className="text-neutral-400 text-base md:text-xl max-w-2xl mx-auto">
-          A selection of aerospace, mechanical, and software projects spanning UAV design,
-          flight dynamics, and autonomous systems.
+          Selected projects highlighting my experience in mechanical design, system modeling, and hands-on engineering development.
         </p>
       </div>
 
