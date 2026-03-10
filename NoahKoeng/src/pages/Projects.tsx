@@ -13,6 +13,7 @@ import Orbital1 from '/Orbital1.png';
 import Orbital2 from '/Orbital2.png';
 import Flight1 from '/Flight1.png';
 import { neutral, orange } from "../constants/colors";
+import Divider from "../components/Divider";
 
 type Project = {
   index: string;
@@ -263,7 +264,7 @@ const Projects = () => {
         </div>
       )}
       {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="pt-48 pb-20 px-4 md:px-10 text-center">
+      <div className="pt-48 pb-20 px-4 md:px-10 text-center">
         <p className={`${orange.textPrimary} text-sm md:text-base font-semibold uppercase tracking-widest mb-5`}>
           Engineering Portfolio
         </p>
@@ -274,12 +275,9 @@ const Projects = () => {
           A selection of aerospace, mechanical, and software projects spanning UAV design,
           flight dynamics, and autonomous systems.
         </p>
-      </section>
-
-      {/* ── Divider ───────────────────────────────────────────────────── */}
-      <div className="max-w-screen-xl mx-auto px-4 md:px-10">
-        <div className={`h-px bg-gradient-to-r from-transparent ${orange.gradientViaSoft} to-transparent`} />
       </div>
+
+      <Divider/>
 
       {/* ── Project Cards ─────────────────────────────────────────────── */}
       <section className="max-w-screen-xl mx-auto px-4 md:px-10 py-24">

@@ -73,7 +73,7 @@ const Home = () => {
     <div className={`min-h-screen ${neutral.pageBg} ${neutral.pageText} overflow-x-hidden`}>
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="pt-36 pb-28 px-4 md:px-10">
+      <div className="pt-36 pb-28">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
 
           {/* Photo */}
@@ -119,10 +119,10 @@ const Home = () => {
           </div>
 
         </div>
-      </section>
+      </div>
 
       {/* ── Experience Timeline ───────────────────────────────────────── */}
-      <section id="about" className="max-w-screen-xl mx-auto px-4 md:px-10 pb-36">
+      <div id="about" className="max-w-screen-xl mx-auto px-4 md:px-10 pb-36">
         <h2 className={`text-3xl md:text-4xl font-bold ${neutral.whiteText} text-center mb-20`}>
           Work <span className={orange.textPrimary}>Experience</span>
         </h2>
@@ -194,7 +194,7 @@ const Home = () => {
             })}
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
