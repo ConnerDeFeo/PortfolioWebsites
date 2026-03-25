@@ -2,6 +2,7 @@ import { useState } from "react";
 import Dagger1 from '/Dagger1.png';
 import Dagger2 from '/Dagger2.png';
 import Dagger3 from '/Dagger3.png';
+import Dagger4 from '/Dagger4.jpeg';
 import Drone1 from '/Drone1.jpeg';
 import DroneVideo from '/DroneVideo.mov';
 import Drone2 from '/Drone2.png';
@@ -46,8 +47,8 @@ const projects: Project[] = [
       "Developed motor configuration and hull architecture selected as the program's baseline platform configuration.",
     ],
     featured: true,
-    coverImage: Dagger1,
-    images: [Dagger1, Dagger3, Dagger2],
+    coverImage: Dagger4,
+    images: [Dagger4, Dagger1, Dagger3, Dagger2],
     videos: [],
   },
   {
