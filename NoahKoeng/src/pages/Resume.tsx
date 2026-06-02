@@ -28,7 +28,7 @@ const Resume = () => {
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-3 text-sm text-neutral-600">
             <span>607-793-3640</span>
             <span className="text-neutral-300">|</span>
-            <span>nfk8360@rit.edu</span>
+            <span>noahkoeng@gmail.com</span>
             <span className="text-neutral-300">|</span>
             <span>linkedin.com/in/noah-koeng</span>
           </div>
@@ -104,7 +104,7 @@ const Resume = () => {
             role="Sea-Ready VTOL Aircraft for US Air Force"
             company="Independent Study"
             location=""
-            period="Aug. 2025 – Present"
+            period="Aug. 2025 – May 2026"
             bullets={[
               "Led Structures Team in the design and fabrication of a fixed-wing VTOL UAV fuselage for aquatic operations.",
               "Designed hull geometry for flotation, aerodynamic efficiency, and structural integrity in air and water environments.",
@@ -116,7 +116,7 @@ const Resume = () => {
             role="UAV with Onboard Vehicle Classification Module"
             company="RIT Senior Design Project"
             location=""
-            period="Aug. 2025 – Present"
+            period="Aug. 2025 – May 2026"
             bullets={[
               "Led team coordination and task execution while driving CAD development of critical airframe components.",
               "Integrated and tuned flight controller hardware to achieve stable, repeatable flight performance.",
@@ -134,7 +134,7 @@ const Resume = () => {
               <p className="text-sm text-neutral-700">Team Captain (3 Years)</p>
             </div>
             <div className="text-sm text-neutral-500 sm:text-right shrink-0">
-              <p>2021 – Present</p>
+              <p>2021 – 2026</p>
               <p>Rochester, NY</p>
             </div>
           </div>

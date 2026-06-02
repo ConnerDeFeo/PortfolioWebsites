@@ -3,6 +3,8 @@ import Dagger1 from '/Dagger1.png';
 import Dagger2 from '/Dagger2.png';
 import Dagger3 from '/Dagger3.png';
 import Dagger4 from '/Dagger4.jpeg';
+import Dagger5 from '/Dagger5.jpg';
+import DaggerVideo from '/DaggerVideo.mp4';
 import Drone1 from '/Drone1.jpeg';
 import DroneVideo from '/DroneVideo.mov';
 import Drone2 from '/Drone2.png';
@@ -36,8 +38,8 @@ const projects: Project[] = [
     index: "01",
     title: "Sea-Ready VTOL Aircraft",
     context: "Independent Study · US Air Force",
-    period: "Aug. 2025 – Present",
-    status: "Active",
+    period: "Aug. 2025 – May 2026",
+    status: "Completed",
     tags: ["Structures", "UAV", "Fabrication", "Aerospace"],
     summary:
       "Leading the Structures Team in designing and fabricating a fixed-wing VTOL UAV fuselage engineered for aquatic operations — balancing flotation, aerodynamics, and corrosion resistance in a single hull architecture selected as the program's baseline platform.",
@@ -47,16 +49,16 @@ const projects: Project[] = [
       "Developed motor configuration and hull architecture selected as the program's baseline platform configuration.",
     ],
     featured: true,
-    coverImage: Dagger4,
-    images: [Dagger4, Dagger1, Dagger3, Dagger2],
-    videos: [],
+    coverImage: Dagger5,
+    images: [Dagger5, Dagger4, Dagger1, Dagger3, Dagger2],
+    videos: [DaggerVideo],
   },
   {
     index: "02",
     title: "UAV with Onboard AI Classification",
     context: "RIT Senior Design Project",
-    period: "Aug. 2025 – Present",
-    status: "Active",
+    period: "Aug. 2025 – May 2026",
+    status: "Completed",
     tags: ["AI / ML", "Flight Systems", "CAD", "FAA Part 107"],
     summary:
       "Building an autonomous UAV that classifies ground vehicles in real time using an onboard neural network — responsible for airframe CAD, flight controller tuning, and FAA-certified flight testing.",

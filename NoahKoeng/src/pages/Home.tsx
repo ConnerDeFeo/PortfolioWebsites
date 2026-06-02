@@ -23,7 +23,7 @@ const experiences: Experience[] = [
     role: "Classical Controls Teacher's Assistant",
     company: "Rochester Institute of Technology",
     location: "Rochester, NY",
-    period: "Jan. 2026 – Present",
+    period: "Jan. 2026 – May 2026",
     summary:
       "Guide students in classical control theory during office hours and assist the professor with laboratory setup, execution, and evaluation.",
   },
@@ -103,8 +103,8 @@ const Home = () => {
                 607-793-3640
               </a>
               <span className="text-neutral-700">|</span>
-              <a href="mailto:nfk8360@rit.edu" className={`${orange.hoverText} transition-colors`}>
-                nfk8360@rit.edu
+              <a href="mailto:noahkoeng@gmail.com" className={`${orange.hoverText} transition-colors`}>
+                noahkoeng@gmail.com
               </a>
               <span className="text-neutral-700">|</span>
               <a
