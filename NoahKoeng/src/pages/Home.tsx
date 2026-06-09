@@ -96,7 +96,7 @@ const Home = () => {
               Noah Koeng
             </h1>
             <p className="text-neutral-400 text-base md:text-xl max-w-2xl mb-8">
-              B.S. &amp; M.E. Candidate at Rochester Institute of Technology · GPA 3.86 / 4.00
+              B.S. &amp; M.E. Graduate of Rochester Institute of Technology · GPA 3.86 / 4.00
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 text-base text-neutral-400">
               <a href="tel:6077933640" className={`${orange.hoverText} transition-colors`}>
